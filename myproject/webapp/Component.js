@@ -5,14 +5,20 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "myproject/model/models"
+        "myproject/model/models",
+        "sap/ui/core/library",
+        "sap/ui/core/routing/History",
+        "sap/ui/model/resource/ResourceModel",
+        "sap/ui/model/json/JSONModel"
+        
     ],
-    function (UIComponent, Device, models) {
+    function (UIComponent, Device, models,library,History,ResourceModel,JSONModel) {
         "use strict";
 
         return UIComponent.extend("myproject.Component", {
             metadata: {
-                manifest: "json"
+                manifest: "json",
+                interfaces: [library.IAsyncContentCreation]
             },
 
             /**
@@ -29,6 +35,16 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+            },
+            getContentDensityClass: function () {
+                if (!this._sContentDensityClass) {
+                    if (!Device.support.touch){
+                        this._sContentDensityClass = "sapUiSizeCompact";
+                    } else {
+                        this._sContentDensityClass = "sapUiSizeCozy";
+                    }
+                }
+                return this._sContentDensityClass;
             }
         });
     }

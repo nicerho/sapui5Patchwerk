@@ -1,19 +1,19 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
-    "sap/f/library",
+    "sap/f/LayoutType",
     "sap/m/MessageToast",
     "sap/ui/core/UIComponent"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller,JSONModel,library,MessageToast,UIComponent) {
+    function (Controller,JSONModel,LayoutType,MessageToast,UIComponent) {
         "use strict";
 
         return Controller.extend("myproject.controller.View1", {
             onInit: function () {
-                this.setModel(new JSONModel({layout: library.LayoutType.OneColumn,}),"myLayout");
+                this.setModel(new JSONModel({layout: LayoutType.OneColumn,}),"myLayout");
             },
             setModel : function (oModel, sName) {
                 return this.getView().setModel(oModel, sName);
@@ -33,7 +33,7 @@ sap.ui.define([
                   .slice(-1)
                   .pop();
                              
-                this.getRouter().navTo("TargetView1", { column: oItem });
+                this.getOwnerComponent().getRouter().navTo("TargetView1", { column: oItem });
               }
         });
     });

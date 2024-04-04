@@ -12,7 +12,7 @@
     "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
-      "version": "1.12.4",
+      "version": "1.120.6",
       "toolsId": "36a07d22-aa6d-41a7-9aff-f80b212479ac"
     }
   },
@@ -33,8 +33,9 @@
     }
   },
   "sap.ui5": {    
+    "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.122.1",
+      "minUI5Version": "1.120.6",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -43,7 +44,8 @@
         "sap.ui.comp": {},
         "sap.ui.generic.app": {},
         "sap.ui.table": {},
-        "sap.ushell": {}
+        "sap.ushell": {},
+        "sap.uxap":{}
       }
     },
     "contentDensities": {
@@ -73,9 +75,9 @@
       "config": {
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
-        "async": true,
         "viewPath": "myproject.view",
         "controlAggregation": "pages",
+        "transition":"fade",
         "controlId": "app",
         "clearControlAggregation": false
       },

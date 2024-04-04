@@ -7,12 +7,129 @@
 		xmlns:form="sap.ui.layout.form"
 		xmlns:ndc="sap.ndc"
 		>
-	<ObjectPageLayout id="ObjectPageLayout"
-				
+	<ObjectPageLayout id="ObjectPageLayout"				
 					alwaysShowContentHeader="false"
 					preserveHeaderStateOnScroll="false"
 					headerContentPinnable="true"
 					isChildPage="true"
 					upperCaseAnchorBar="false">
+				<headerTitle>				
+					<ObjectPageDynamicHeaderTitle>						
+						<navigationActions>														
+							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="onClose"  tooltip="Close column" />
+						</navigationActions>
+					</ObjectPageDynamicHeaderTitle>					
+				</headerTitle>
+				<headerContent >
+				<m:FlexBox >
+					<m:Label text="고객상호" class="sapUiSmallMarginEnd"/>
+					<m:Input placeholder="asdsad" id="nameSpace" width="auto" editable="false"/>
+					<m:Label text="주문번호" class="sapUiSmallMarginEnd sapUiSmallMarginBegin"/>
+					<m:Input placeholder="asdsad" id="nameSpace2" editable="false"/>
+				</m:FlexBox>
+				<m:FlexBox >
+					<m:Label text="납기일자" class="sapUiSmallMarginEnd"/>
+					<m:DatePicker />
+					<m:Label text="주문일자" class="sapUiSmallMarginEnd sapUiSmallMarginBegin"/>
+					<m:DatePicker />
+				</m:FlexBox>
+				<m:FlexBox >
+					<m:Label text="단가구문" class="sapUiSmallMarginEnd"/>
+					<m:ComboBox selectedKey="empty string"/>				
+					<m:Label text="주문구분" class="sapUiSmallMarginEnd sapUiSmallMarginBegin"/>
+					<m:ComboBox selectedKey="empty string" />
+				</m:FlexBox>
+				<m:FlexBox >
+					<m:Label text="배송지" class="sapUiSmallMarginEnd"/>
+					<m:Input />				
+					<m:Label text="운송방법" class="sapUiSmallMarginEnd sapUiSmallMarginBegin"/>
+					<m:ComboBox selectedKey="empty string" />
+				</m:FlexBox>
+				<m:FlexBox width="100%">
+				<m:Label text="비고" class="sapUiSmallMarginEnd"/>
+				<m:Input />	
+				</m:FlexBox>	
+				</headerContent>
+		<sections>
+			<ObjectPageSection>
+				<subSections>
+					<ObjectPageSubSection title="주문리스트">
+						<blocks>
+							<ObjectPageLazyLoader>
+								<form:SimpleForm
+									columnsL="2"
+									columnsM="2"
+									editable="true"
+									layout="ResponsiveGridLayout">
+									<form:content>
+										<m:FlexBox direction="Column">																						
+											<m:Table 
+												id="asnHistoryTable" 
+												items=""
+												mode="SingleSelectMaster"
+												growing="true"
+												growingThreshold="5"
+												>
+												<m:columns>
+													<m:Column>
+														<m:Text text="주문번호"/>
+													</m:Column>
+													<m:Column >
+														<m:Text text="순번"/>
+													</m:Column>													
+													<m:Column >
+														<m:Text text="코드"/>
+													</m:Column>
+													<m:Column >
+														<m:Text text="코드명"/>
+													</m:Column>
+													<m:Column >
+														<m:Text text="단가"/>
+													</m:Column>
+													<m:Column >
+														<m:Text text="금액"/>
+													</m:Column>
+													<m:Column >
+														<m:Text text="비고"/>
+													</m:Column>
+												</m:columns>
+												<m:items>
+													<m:ColumnListItem>
+														 <m:cells>
+															<m:ObjectIdentifier text="테스트 주문번호"/>
+															<m:Text text="테스트 순번"/>
+															<m:Text text="테스트 코드"/>
+															<m:Text text="테스트 코드명"/>
+															<m:Text text="100원"/>
+															<m:Text text="200원"/>
+															<m:Input />
+														</m:cells>
+													</m:ColumnListItem>												
+												</m:items>
+											</m:Table>
+										</m:FlexBox>
+									</form:content>
+								</form:SimpleForm>
+							</ObjectPageLazyLoader>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection>
+				<subSections>
+					<ObjectPageSubSection title="발주리스트">
+						<ObjectPageLazyLoader>
+							<form:SimpleForm layout="ResponsiveGridLayout">
+								<form:content>
+									
+								</form:content>
+							</form:SimpleForm>
+						</ObjectPageLazyLoader>
+					</ObjectPageSubSection>					
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection>			
+			</ObjectPageSection>
+		</sections>
     </ObjectPageLayout>
 </mvc:View>

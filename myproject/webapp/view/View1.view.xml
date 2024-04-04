@@ -1,11 +1,8 @@
 <mvc:View controllerName="myproject.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:f="sap.f"
-    xmlns:uxap="sap.uxap"
-    xmlns:tnt="sap.tnt"
-    >
-        <FlexBox height="20px"></FlexBox>
+    >        
         <Toolbar class="sapUiMediumMarginTop">
             <Text text="부품주문등록(총판)"/>
             <ToolbarSpacer/>
