@@ -1,0 +1,22 @@
+/* Enter your custom styles here */
+
+
+.mySaveButton span.sapMBtnInner.sapMBtnEmphasized   {
+     background-color: rgb(80, 124, 10) !important;  
+}
+.mySaveButton{
+    border-radius: 0% !important; 
+}
+
+.mySaveButton2 span.sapMBtnInner.sapMBtnEmphasized{
+    background-color: chocolate !important;
+}
+
+
+.customTable .sapMTableTH{
+    background-color: darkgray !important;
+}
+
+.mySaveButton3>span{
+    background-color: rgb(47 26 241) !important; border-radius: 0rem !important;
+}

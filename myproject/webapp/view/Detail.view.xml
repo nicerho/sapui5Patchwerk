@@ -1,0 +1,18 @@
+<mvc:View displayBlock="true" controllerName="myproject.controller.Detail" height="auto"
+		xmlns="sap.uxap"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:m="sap.m"
+		xmlns:f="sap.f"
+		xmlns:core="sap.ui.core"
+		xmlns:form="sap.ui.layout.form"
+		xmlns:ndc="sap.ndc"
+		>
+	<ObjectPageLayout id="ObjectPageLayout"
+				
+					alwaysShowContentHeader="false"
+					preserveHeaderStateOnScroll="false"
+					headerContentPinnable="true"
+					isChildPage="true"
+					upperCaseAnchorBar="false">
+    </ObjectPageLayout>
+</mvc:View>

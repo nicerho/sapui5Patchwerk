@@ -1,0 +1,60 @@
+<mvc:View controllerName="myproject.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:uxap="sap.uxap"
+    xmlns:tnt="sap.tnt"
+    >
+        <FlexBox height="20px"></FlexBox>
+        <Toolbar class="sapUiMediumMarginTop">
+            <Text text="부품주문등록(총판)"/>
+            <ToolbarSpacer/>
+            <Button icon="sap-icon://unfavorite"/>
+        </Toolbar>
+        <Toolbar class="sapUiTinyMarginTop" height="3rem">
+            <Label labelFor="searchInput" text="주문번호" width="5rem" class="sapUiSmallMarginBegin"/>
+            <Input id="searchInput" width="7rem"/>
+            <Label labelFor="datePicker1" text="주문번호" width="5rem" class="sapUiSmallMarginBegin"/>
+            <DatePicker	id="datePicker1" valueFormat="yyyy-MM-dd" width="7rem"/>
+            <Text text="~" class="sapUiSmallMargin"/>
+            <DatePicker	id="datePicker2" valueFormat="yyyy-MM-dd" width="7rem"/>
+            <ToolbarSpacer/>
+            <Button text="조회" class="sapUiMediumMarginEnd mySaveButton3" type="Emphasized" width="5rem" />
+        </Toolbar>
+        <FlexBox justifyContent="End" width="auto" class="sapUiTinyMarginTop">
+            <Button text="저장" class="sapUiTinyMarginEnd mySaveButton2" type="Emphasized" width="5rem" />
+            <Button text="인쇄" class="sapUiTinyMarginEnd mySaveButton" type="Emphasized" width="5rem" />
+        </FlexBox>
+        <f:FlexibleColumnLayout layout="{myLayout>/layout}">    
+            <f:beginColumnPages>
+                    <Table 
+                        id="testTable"
+                        class="sapFDynamicPageAlignContent customTable"
+                        mode="MultiSelect"
+                        items="{
+                            path:'testData>/'
+                         }"                        
+                    >
+                        <columns >                          
+                             <Column >
+                                <Text text="주문번호"/>
+                            </Column>
+                             <Column >
+                                <Text text="상태"/>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem type="Navigation" press="onPress" vAlign="Middle">
+                                <cells>                                    
+                                    <ObjectIdentifier text="{testData>code}" />
+                                    <ObjectIdentifier text="{testData>status}" />                                    
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>          
+            </f:beginColumnPages>
+                <f:midColumnPages>
+                    <mvc:XMLView id="Detail" viewName="myproject.view.Detail" />
+                </f:midColumnPages>
+        </f:FlexibleColumnLayout>
+</mvc:View>

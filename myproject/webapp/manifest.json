@@ -1,7 +1,7 @@
 {
   "_version": "1.59.0",
   "sap.app": {
-    "id": "project1",
+    "id": "myproject",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.12.4",
-      "toolsId": "54ac8529-359c-41de-8d56-d9f0618e8ef1"
+      "toolsId": "36a07d22-aa6d-41a7-9aff-f80b212479ac"
     }
   },
   "sap.ui": {
@@ -32,10 +32,9 @@
       "phone": true
     }
   },
-  "sap.ui5": {
-    "flexEnabled": true,
+  "sap.ui5": {    
     "dependencies": {
-      "minUI5Version": "1.121.2",
+      "minUI5Version": "1.122.1",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -55,9 +54,13 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "project1.i18n.i18n"
+          "bundleName": "myproject.i18n.i18n"
         }
-      }
+      },
+      "testData": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/testData.json"
+			}
     },
     "resources": {
       "css": [
@@ -71,45 +74,34 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "project1.view",
+        "viewPath": "myproject.view",
         "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
       },
       "routes": [
         {
-          "name": "RouteView1",
-          "pattern": ":?query:",
-          "target": 
+          "name": "TargetView1",
+          "pattern": "TargetView1/:column:",
+          "target": [
             "TargetView1"
-          
-        },
-        {
-          "name": "test",
-          "pattern": "test",
-          "target":"test"          
+          ]
         }
       ],
       "targets": {
         "TargetView1": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
+          "viewType": "XML",                    
           "viewId": "View1",
-          "viewName": "View1"
-        },
-        "test" : {
-          "viewType": "XML",
-          "viewId": "test",
-          "viewName": "Test"
+          "viewName": "View1",
+          "viewLevel": 1
         }
-      },
-      "rootView": {
-        "viewName": "project1.view.App",
-        "type": "XML",
-        "async": true,
-        "id": "App"
       }
+    },
+    "rootView": {
+      "viewName": "myproject.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
     }
   }
 }
