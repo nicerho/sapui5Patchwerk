@@ -22,6 +22,20 @@
             <Button text="저장" class="sapUiTinyMarginEnd mySaveButton2" type="Emphasized" width="5rem" />
             <Button text="인쇄" class="sapUiTinyMarginEnd mySaveButton" type="Emphasized" width="5rem" />
         </FlexBox>
+        <FlexBox >
+                <Label text="영업발주등록" class="titleFont">
+            <layoutData>
+                <FlexItemData
+        growFactor="1" />
+            </layoutData>
+        </Label>
+        <Input id="nameFilter" width="100%" class="filter">
+            <layoutData>
+                <FlexItemData
+        growFactor="3" />
+            </layoutData>
+        </Input>
+        </FlexBox>
         <f:FlexibleColumnLayout layout="{myLayout>/layout}">    
             <f:beginColumnPages>
                     <Table 

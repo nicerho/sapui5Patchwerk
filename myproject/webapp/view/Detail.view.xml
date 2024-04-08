@@ -8,11 +8,7 @@
 		xmlns:ndc="sap.ndc"
 		>
 	<ObjectPageLayout id="ObjectPageLayout"				
-					
-					
-			
-					isChildPage="true"
-					>
+					isChildPage="true" useIconTabBar="true">
 				<headerTitle>				
 					<ObjectPageDynamicHeaderTitle>						
 						<navigationActions>														
@@ -52,7 +48,7 @@
 				
 				</headerContent>
 		<sections>
-			<ObjectPageSection>
+			<ObjectPageSection title="주문리스트">
 				<subSections>
 					<ObjectPageSubSection title="주문리스트">
 						<blocks>
@@ -116,7 +112,7 @@
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
-			<ObjectPageSection>
+			<ObjectPageSection >
 				<subSections>
 					<ObjectPageSubSection title="발주리스트">
 						<ObjectPageLazyLoader>
