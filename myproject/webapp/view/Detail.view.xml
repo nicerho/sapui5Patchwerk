@@ -8,11 +8,11 @@
 		xmlns:ndc="sap.ndc"
 		>
 	<ObjectPageLayout id="ObjectPageLayout"				
-					alwaysShowContentHeader="false"
-					preserveHeaderStateOnScroll="false"
-					headerContentPinnable="true"
+					
+					
+			
 					isChildPage="true"
-					upperCaseAnchorBar="false">
+					>
 				<headerTitle>				
 					<ObjectPageDynamicHeaderTitle>						
 						<navigationActions>														
@@ -49,6 +49,7 @@
 				<m:Label text="비고" class="sapUiSmallMarginEnd"/>
 				<m:Input />	
 				</m:FlexBox>	
+				
 				</headerContent>
 		<sections>
 			<ObjectPageSection>
